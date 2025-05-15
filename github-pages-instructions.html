@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Deployment Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>GitHub Pages Deployment Instructions</h1>
+    
+    <div class="success">
+        <h3>Clean URLs Configuration Complete</h3>
+        <p>The site has been configured to use clean URLs (without .html extensions) on GitHub Pages.</p>
+        <p>The <code>_config.yml</code> file has been created with the <code>permalink: pretty</code> setting, which tells GitHub Pages to serve HTML files without the .html extension.</p>
+    </div>
+    
+    <h2>How to Deploy to GitHub Pages</h2>
+    
+    <ol>
+        <li>Push this code to a GitHub repository</li>
+        <li>Go to the repository settings</li>
+        <li>Scroll down to the "GitHub Pages" section</li>
+        <li>Under "Source", select the branch you want to deploy (usually <code>main</code> or <code>master</code>)</li>
+        <li>Click "Save"</li>
+        <li>Wait a few minutes for GitHub Pages to build your site</li>
+        <li>Your site will be available at <code>https://yourusername.github.io/repository-name/</code></li>
+    </ol>
+    
+    <div class="note">
+        <h3>How Clean URLs Work on GitHub Pages</h3>
+        <p>With the <code>permalink: pretty</code> configuration:</p>
+        <ul>
+            <li>When someone visits <code>/popular-tools</code>, GitHub Pages will serve the <code>popular-tools.html</code> file</li>
+            <li>When someone visits <code>/all-tools</code>, GitHub Pages will serve the <code>all-tools.html</code> file</li>
+        </ul>
+        <p>This works automatically without needing .htaccess rules, which GitHub Pages doesn't process.</p>
+    </div>
+    
+    <div class="warning">
+        <h3>Local Development</h3>
+        <p>When developing locally with a simple HTTP server (like Python's http.server), you'll need to access the HTML files directly with their .html extension:</p>
+        <ul>
+            <li><code>http://localhost:8080/index.html</code></li>
+            <li><code>http://localhost:8080/popular-tools.html</code></li>
+            <li><code>http://localhost:8080/all-tools.html</code></li>
+        </ul>
+        <p>But when deployed to GitHub Pages, the clean URLs will work correctly.</p>
+    </div>
+    
+    <a href="index.html" class="btn">Back to Home</a>
+</body>
+</html>

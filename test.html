@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean URL Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .links {
+            margin-top: 30px;
+        }
+        .links a {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .links a:hover {
+            background-color: #0056b3;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clean URL Test Page</h1>
+    
+    <div class="note">
+        <h3>What We've Done</h3>
+        <p>We've updated all internal links in the HTML files to use clean URLs without .html extensions. We've also created a .htaccess file with URL rewriting rules.</p>
+    </div>
+    
+    <div class="warning">
+        <h3>Important Note</h3>
+        <p>The Python simple HTTP server we're using for testing doesn't process the .htaccess file. In a real Apache server environment, the clean URLs would work correctly.</p>
+        <p>For testing purposes, please use the direct links below to access the HTML files:</p>
+    </div>
+    
+    <div class="links">
+        <h3>Direct Links (for testing)</h3>
+        <a href="index.html">Home (index.html)</a>
+        <a href="popular-tools.html">Popular Tools</a>
+        <a href="all-tools.html">All Tools</a>
+        <a href="tool-template.html">Tool Template</a>
+    </div>
+    
+    <div class="note">
+        <h3>How to Verify the Changes</h3>
+        <p>When you click on the direct links above, you'll be taken to the HTML files. Once there, you can check that the internal navigation links have been updated to use clean URLs.</p>
+        <p>For example, in the navigation menu, the "Popular Tools" link should point to <code>/popular-tools</code> instead of <code>popular-tools.html</code>.</p>
+    </div>
+    
+    <div class="note">
+        <h3>.htaccess Configuration</h3>
+        <p>The .htaccess file has been configured with the following rules:</p>
+        <ol>
+            <li>Internally rewrite URLs without .html to their .html versions (so /popular-tools will be served from popular-tools.html)</li>
+            <li>Redirect any direct access to .html files to their clean URL versions (so popular-tools.html will redirect to /popular-tools)</li>
+        </ol>
+        <p>These rules will only work when the site is hosted on an Apache server with mod_rewrite enabled.</p>
+    </div>
+</body>
+</html>
