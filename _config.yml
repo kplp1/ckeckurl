@@ -1,14 +1,1 @@
 permalink: pretty
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-  - scope:
-      path: "all-tools"
-    values:
-      permalink: /all-tools/
-  - scope:
-      path: "popular-tools"
-    values:
-      permalink: /popular-tools/
