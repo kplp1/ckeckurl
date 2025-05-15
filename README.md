@@ -8,27 +8,43 @@ This site uses clean URLs (without .html extensions) for better SEO and user exp
 
 ### How it works on GitHub Pages
 
-GitHub Pages automatically handles clean URLs when you add the following to your `_config.yml` file:
+This site uses a directory-based approach for clean URLs on GitHub Pages:
+
+1. Instead of using `popular-tools.html`, we create a `popular-tools/index.html` file
+2. Instead of using `all-tools.html`, we create a `all-tools/index.html` file
+
+With this approach:
+- When someone visits `/popular-tools/`, the server automatically serves the `popular-tools/index.html` file
+- When someone visits `/all-tools/`, the server automatically serves the `all-tools/index.html` file
+
+This works on both GitHub Pages and local development servers without any special configuration.
+
+### Configuration
+
+We also include a `_config.yml` file with the following settings:
 
 ```yaml
 permalink: pretty
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "all-tools"
+    values:
+      permalink: /all-tools/
+  - scope:
+      path: "popular-tools"
+    values:
+      permalink: /popular-tools/
 ```
 
-With this configuration:
-- When someone visits `/popular-tools`, GitHub Pages will serve the `popular-tools.html` file
-- When someone visits `/all-tools`, GitHub Pages will serve the `all-tools.html` file
+This ensures that GitHub Pages correctly handles the URLs and provides a fallback for any edge cases.
 
-This works automatically without needing .htaccess rules, which GitHub Pages doesn't process.
+### 404 Page
 
-### Local Development
-
-When developing locally with a simple HTTP server (like Python's http.server), you'll need to access the HTML files directly with their .html extension:
-
-- http://localhost:8080/index.html
-- http://localhost:8080/popular-tools.html
-- http://localhost:8080/all-tools.html
-
-But when deployed to GitHub Pages, the clean URLs will work correctly.
+A custom 404 page (`404.html`) is included to handle any missing pages. GitHub Pages automatically uses this file when a page is not found.
 
 ## Deployment
 
